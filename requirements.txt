@@ -22,3 +22,6 @@ joblib
 gunicorn
 psycopg2
 mlflow
+jupyterlab
+seaborn
+tox
