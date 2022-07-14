@@ -4,7 +4,7 @@ stages:
     deps:
     - src/get_data.py
     - src/load_data.py
-    - data_given/insurance.csv
+    - source_data/insurance.csv
     outs:
     - data/raw/insurance.csv
 
@@ -27,9 +27,9 @@ stages:
     - estimators.ElasticNet.params.alpha
     - estimators.ElasticNet.params.l1_ratio
     metrics:
-    - report/scores.json:
+    - reports/scores.json:
         cache: false
-    - report/params.json:
+    - reports/params.json:
         cache: false
     outs:
     - Saved_models/model.joblib
