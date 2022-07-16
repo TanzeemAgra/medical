@@ -1,108 +1,63 @@
-{% extends 'base.html' %}
+{% load static %}
+<html>
+<title>Medical Insurance Prediction</title>
 
-{% block title %}
-WineQuality
-{% endblock title %}
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #4CAF50;} /* Green */
+.button2 {background-color: #008CBA;} /* Blue */
+</style>
 
 
-{% block custom_css %}
-<!-- Custom CSS -->
-<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-{% endblock custom_css %}
 
 
-{% block body %}
-<!-- nav bar -->
+<body style="background-color:powderblue;">
+<center><h1> <span style="color:#FF0000">Diabetes Detection</span></h1></center>
+<center><h3>Please enter the data </h3></center><br>
+<form action= "{% url 'result' %}">
 
-<nav class="navbar navbar-expand-lg navbar-light shadow fixed-top" style="background-color: #e3f2fd;">
-    <a class="navbar-brand" href="/">WineQualityPrediction</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://github.com/c17hawke/dvc-plus-cml-test">source code</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<div>
-    <!-- nav bar ends -->
+{% csrf_token %}
 
-    <div class="container-fluid masthead">
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <form method="POST">
-                        <!-- Input block-->
-                        <div class="form-group">
-                            <label for="translation">
-                                <blockquote class="blockquote">
-                                    <p class="mb-2">Enter the details as indicated:</p>
-                                </blockquote>
-                            </label>
-                            <textarea class="form-control" name="fixed_acidity" rows="1"
-                                placeholder="fixed acidity expected range 4.6 to 15.9"></textarea>
-                            <textarea class="form-control" name="volatile_acidity" rows="1"
-                                placeholder="volatile acidity expected range 0.12 to 1.58"></textarea>
-                            <textarea class="form-control" name="citric_acid" rows="1"
-                                placeholder="citric acid expected range 0.0 to 1.0"></textarea>
-                            <textarea class="form-control" name="residual_sugar" rows="1"
-                                placeholder="residual sugar expected range 0.9 to 15.5"></textarea>
-                            <textarea class="form-control" name="chlorides" rows="1" 
-                                placeholder="chlorides expected range 0.012 to 0.611"></textarea>
-                            <textarea class="form-control" name="free_sulfur_dioxide" rows="1"
-                                placeholder="free sulfur dioxide expected range 1.0 to 72.0"></textarea>
-                            <textarea class="form-control" name="total_sulfur_dioxide" rows="1"
-                                placeholder="total sulfur dioxide expected range 6.0 to 289.0"></textarea>
-                            <textarea class="form-control" name="density" rows="1" 
-                                placeholder="density expected range 0.99007 to 1.00369"></textarea>
-                            <textarea class="form-control" name="pH" rows="1" 
-                                placeholder="pH expected range 2.74 to 4.01"></textarea>
-                            <textarea class="form-control" name="sulphates" rows="1" 
-                                placeholder="sulphates expected range 0.33 to 2.0"></textarea>
-                            <textarea class="form-control" name="alcohol" rows="1" 
-                                placeholder="alcohol expected range 8.4 to 14.9"></textarea>
+<table align="center">
 
-                        </div>
 
-                        <!-- Select output language here. -->
-                        <div class="form-group">
-                        </div>
-                        <button type="submit" class="btn btn-primary mb-2">Predict</button></br>
-                        </br>
-                    </form>
-                    <!-- Translated text returned by the Translate API is rendered here. -->
-                </div>
-                <div class="col">
-                    <form>
-                        <div class="form-group">
-                            <label for="translation-result">
 
-                                <blockquote class="blockquote">
-                                    <p class="mb-2">Prediction:</p>
-                                </blockquote>
+<tr><td>Age:<td><input type="text" required name="age"><p></td></tr>
+<tr><td>Sex:<td><input type="text" required name="sex"><p></tr></td>
+<tr><td>BMI:<td><input type="text" required name="bmi"><p></tr></td>
+<tr><td>Children:<td><input type="text" required name="children"><p></tr></td>
+<tr><td>Smoker:<td><input type="text" required name="smoker"><p></tr></td>
+<tr><td>Region:<td><input type="text" required name="region"><p></tr></td>
 
-                            </label>
-                            <textarea readonly class="form-control" id="exTextarea" rows="5">{{ response }}</textarea>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+</table>
+<tr><td><br><p>
+<center><button type ="submit" name="" value="submit" class="button button1">Submit</button>
+<button type ="reset" class="button button1">Reset</button></center>
 
-        {% endblock body %}
+</form>
 
-        {% block custom_js %}
-        <!-- Custom JS -->
-        <script src="{{ url_for('static', filename='script/index.js') }}"></script>
-        {% endblock custom_js %}
+
+{% if answer %}
+
+<center><h2 style="color:#FF6600">The person is having {{answer}} Medical Insurance</h2>
+<h3 style="color:#009900">Thanks for using Medical Insurance App </h3><br>
+</center><p>
+
+{% endif %}
+</tr></td>
+
+
+</center>
+</body>
+</html>
