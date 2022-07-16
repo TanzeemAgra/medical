@@ -1,11 +1,15 @@
 from django.shortcuts import render
 import joblib
 import prediction_service
+#from webapp.firstApp.models import medical
 import yaml
 import os
 import json
-import joblib
+import pandas as pd
 import numpy as np
+from .models import medical
+import psycopg2
+import math
 
 # Create your views here.
 
@@ -26,4 +30,8 @@ def result(request):
     lis.append(float(request.GET['region']))
 
     answer= cls.predict([lis]).tolist()[0]
+
+    b=medical(age=request.GET['sex'],sex=request.GET['sex'],bmi=request.GET['bmi'],children=request.GET['children'],smoker=request.GET['smoker'],region=request.GET['region'],charges=answer)
+    b.save()
+
     return render(request, "index.html",{'answer':answer})

@@ -25,3 +25,5 @@ mlflow
 jupyterlab
 seaborn
 tox
+django
+psycopg2
