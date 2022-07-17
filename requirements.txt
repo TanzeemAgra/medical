@@ -27,3 +27,4 @@ seaborn
 tox
 django
 psycopg2
+whitenoise
