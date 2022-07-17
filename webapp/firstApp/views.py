@@ -31,7 +31,7 @@ def result(request):
 
     answer= cls.predict([lis]).tolist()[0]
 
-    b=medical(age=request.GET['sex'],sex=request.GET['sex'],bmi=request.GET['bmi'],children=request.GET['children'],smoker=request.GET['smoker'],region=request.GET['region'],charges=answer)
+    b=medical(age=request.GET['age'],sex=request.GET['sex'],bmi=request.GET['bmi'],children=request.GET['children'],smoker=request.GET['smoker'],region=request.GET['region'],charges=answer)
     b.save()
 
     return render(request, "index.html",{'answer':answer})
