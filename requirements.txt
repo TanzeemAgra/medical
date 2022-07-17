@@ -28,3 +28,4 @@ tox
 django
 psycopg2
 whitenoise
+heroku
