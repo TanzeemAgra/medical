@@ -29,3 +29,5 @@ django
 psycopg2
 whitenoise
 heroku
+django-heroku
+gunicorn
