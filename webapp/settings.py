@@ -35,11 +35,8 @@ SECRET_KEY = 'django-insecure-c4k%t7olc2)6wsa!(26vcsmyone+r2!qpaac--4oygfd#6hg5l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< HEAD:webapp/webapp/settings.py
-ALLOWED_HOSTS = ['medical-insurance-xerxez.herokuapp.com/','127.0.0.1']
-=======
+
 ALLOWED_HOSTS = ['medical-xerxez.herokuapp.com','127.0.0.1','localhost','0.0.0.0']
->>>>>>> 39db17726ac3e6885820a5c9f957c77d55e84a0d:webapp/settings.py
 
 
 # Application definition

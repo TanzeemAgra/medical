@@ -27,13 +27,9 @@ seaborn
 tox
 django
 psycopg2
-<<<<<<< HEAD
 whitenoise
-=======
 whitenoise
 heroku
 django-heroku
 gunicorn
 psycopg2-binary
->>>>>>> 39db17726ac3e6885820a5c9f957c77d55e84a0d
-mlflow
