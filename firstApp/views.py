@@ -19,7 +19,7 @@ def index(request):
     return render(request, "index.html")
 
 def result(request):
-    cls=joblib.load('../prediction_service/model/model.joblib')
+    cls=joblib.load('prediction_service/model/model.joblib')
     lis=[]
 
     lis.append(float(request.GET['age']))
