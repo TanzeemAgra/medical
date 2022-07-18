@@ -11,6 +11,16 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
+import psycopg2
+import django_heroku
+
+DATABASE_URL = os.environ['DATABASE_URL']
+
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+import dj_database_url
+#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
+#DATABASES['default'] = dj_database_url.config(default='postgres://...',conn_max_age=600, ssl_require=True)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +35,11 @@ SECRET_KEY = 'django-insecure-c4k%t7olc2)6wsa!(26vcsmyone+r2!qpaac--4oygfd#6hg5l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD:webapp/webapp/settings.py
 ALLOWED_HOSTS = ['medical-insurance-xerxez.herokuapp.com/','127.0.0.1']
+=======
+ALLOWED_HOSTS = ['medical-xerxez.herokuapp.com','127.0.0.1','localhost','0.0.0.0']
+>>>>>>> 39db17726ac3e6885820a5c9f957c77d55e84a0d:webapp/settings.py
 
 
 # Application definition
@@ -133,3 +147,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_ROOT=os.path.join(BASE_DIR, 'static')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
