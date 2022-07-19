@@ -23,6 +23,8 @@ import dj_database_url
 
 DATABASES = { 'default': dj_database_url.config(conn_max_age=500) }
 
+#DATABASES = {'default': dj_database_url.config(default='postgres://user:pass@localhost/dbname')}
+
 ##########################################################
 
 
@@ -91,7 +93,7 @@ WSGI_APPLICATION = 'webapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'heroku pg:psql postgresql-reticulated-86156 --app medical-xerxez',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'd2k3c6kmhkjrgc',
         'USER': 'nmkemqzrvuldtj', 
         'PASSWORD': '34325edf96871f1874ba20e314906ad1bbaa787d77c85f4002433abf6e90fb75',
