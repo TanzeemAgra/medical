@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'webapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'medical',
-        'USER': 'postgres', 
-        'PASSWORD': 'Tanzeem@12345',
-        'HOST': 'localhost', 
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd2k3c6kmhkjrgc',
+        'USER': 'nmkemqzrvuldtj', 
+        'PASSWORD': '34325edf96871f1874ba20e314906ad1bbaa787d77c85f4002433abf6e90fb75',
+        'HOST': 'ec2-52-205-61-230.compute-1.amazonaws.com', 
         'PORT': '5432',
     }
 }
