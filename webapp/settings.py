@@ -39,7 +39,7 @@ SECRET_KEY = 'django-insecure-c4k%t7olc2)6wsa!(26vcsmyone+r2!qpaac--4oygfd#6hg5l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['medical-xerxez.herokuapp.com','127.0.0.1','localhost','0.0.0.0']
+ALLOWED_HOSTS = ['medical-xerxez.herokuapp.com']
 
 
 # Application definition
