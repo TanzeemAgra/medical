@@ -3,4 +3,5 @@ from models import medical
 
 admin.site.register(medical)
 
+
 # Register your models here.
