@@ -15,7 +15,8 @@ import django_heroku
 import dj_database_url
 
 #################################################################
-db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'] =  dj_database_url.config()
+#db_from_env = dj_database_url.config(conn_max_age=600)
 #DATABASES['default'].update(db_from_env)
 
 ##########################################################
@@ -32,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-c4k%t7olc2)6wsa!(26vcsmyone+r2!qpaac--4oygfd#6hg5l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['medical-xerxez.herokuapp.com','127.0.0.1','localhost','0.0.0.0']
 
@@ -92,7 +93,6 @@ DATABASES = {
         'PASSWORD': '34325edf96871f1874ba20e314906ad1bbaa787d77c85f4002433abf6e90fb75',
         'HOST': 'ec2-52-205-61-230.compute-1.amazonaws.com', 
         'PORT': '5432',
-        'URI':'postgres://nmkemqzrvuldtj:34325edf96871f1874ba20e314906ad1bbaa787d77c85f4002433abf6e90fb75@ec2-52-205-61-230.compute-1.amazonaws.com:5432/d2k3c6kmhkjrgc',
     
     }
 }
