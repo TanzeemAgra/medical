@@ -15,9 +15,11 @@ import django_heroku
 import dj_database_url
 
 #################################################################
-DATABASES['default'] =  dj_database_url.config()
+#DATABASES['default'] =  dj_database_url.config()
 #db_from_env = dj_database_url.config(conn_max_age=600)
 #DATABASES['default'].update(db_from_env)
+
+DATABASES = { 'default': dj_database_url.config() }
 
 ##########################################################
 
@@ -33,7 +35,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-c4k%t7olc2)6wsa!(26vcsmyone+r2!qpaac--4oygfd#6hg5l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['medical-xerxez.herokuapp.com','127.0.0.1','localhost','0.0.0.0']
 
