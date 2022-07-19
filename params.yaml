@@ -19,6 +19,8 @@ estimators:
     params:
       #alpha: 0.9
       #l1_ratio: 0.4
+      # alpha: 0.8
+      # l1_ratio: 0.5
       alpha: 0.8
       l1_ratio: 0.5
 
