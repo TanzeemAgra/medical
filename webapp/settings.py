@@ -86,12 +86,14 @@ WSGI_APPLICATION = 'webapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'heroku pg:psql postgresql-reticulated-86156 --app medical-xerxez',
         'NAME': 'd2k3c6kmhkjrgc',
         'USER': 'nmkemqzrvuldtj', 
         'PASSWORD': '34325edf96871f1874ba20e314906ad1bbaa787d77c85f4002433abf6e90fb75',
         'HOST': 'ec2-52-205-61-230.compute-1.amazonaws.com', 
         'PORT': '5432',
+        'URI':'postgres://nmkemqzrvuldtj:34325edf96871f1874ba20e314906ad1bbaa787d77c85f4002433abf6e90fb75@ec2-52-205-61-230.compute-1.amazonaws.com:5432/d2k3c6kmhkjrgc',
+    
     }
 }
 
