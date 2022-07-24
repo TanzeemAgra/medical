@@ -32,7 +32,7 @@ def log_production_model(config_path):
 
     #model = mlflow.pyfunc.load_model( model_uri=f"models:/{model_name}/{stage}")
 
-    model_version = 1
+    #model_version = 1
     loaded_model = mlflow.pyfunc.load_model(model_uri=f"models:/{model_name}/{result}")
     model_path = config["webapp_model_dir"] #"prediction_service/model"
     joblib.dump(loaded_model, model_path)
