@@ -25,10 +25,10 @@ mlflow
 jupyterlab
 seaborn
 tox
-django
 psycopg2
 whitenoise
 heroku
 django-heroku
 gunicorn
 psycopg2-binary
+python-math

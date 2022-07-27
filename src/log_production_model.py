@@ -1,6 +1,6 @@
 from src.get_data import read_params
 import pandas as pd
-from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import argparse
 import mlflow
 from mlflow.tracking import MlflowClient
@@ -28,7 +28,7 @@ def log_production_model(config_path):
     run_id="1499fcc1e37044b9be2a6cfd30623e00")
 
     #model_name = "sk-learn-random-forest-reg-model"
-    stage = 'Staging'
+    stage = 'Production'
 
     #model = mlflow.pyfunc.load_model( model_uri=f"models:/{model_name}/{stage}")
 
